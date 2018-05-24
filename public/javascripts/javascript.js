@@ -101,7 +101,7 @@ $(window).on('load', function() {
         }).done(function(responsedata) {
           alert(responsedata.msg);
           if (responsedata.msg === 'Info was saved successfully!') {
-            $('#add').html('Thank you for your contribution! Only 1 package per 24 hours is allowed to limit spam');
+            $('#add').html('Thank you for your contribution!');
           }  {
             return;
           }

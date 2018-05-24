@@ -9,7 +9,7 @@ Things left to do for this website:
 Additional tasks after website deployment:
 
 
-1. Delete if country/providence database snapshot is larger than 30
+1. ~~Delete country/providence database snapshots to save on database space~~
 
 2. Expand map to other parts of the world, Europe and certain Asian countries priority.
 
