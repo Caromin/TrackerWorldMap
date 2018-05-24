@@ -24,9 +24,17 @@ router.post('/info', function(req, res, next) {
         reject(result)
         return;
       } else {
-        console.log('this does exist!');
-
-        ref.orderByChild('dateAdded').limitToLast(6).on('child_added', function(snapshot) {
+        let now = Date.now();
+        // cutoff = 60days;
+        let cutoff = now - 60 * 24 * 60 * 60 * 1000;
+        // making a list anything older than 60 days and pointing toward the last entry
+        // now when there is a new child added to that entry, it will be removed
+        let old = ref.orderByChild('dateAdded').endAt(cutoff).limitToLast(1);
+        old.on('child_added', function(snapshot) {
+          snapshot.ref.remove();
+        })
+        
+        ref.orderByChild('dateAdded').limitToLast(1).on('child_added', function(snapshot) {
           const seized = snapshot.val().seized;
           const agent = snapshot.val().agent;
           const courier = snapshot.val().courier;

@@ -12,7 +12,8 @@ router.post('/add', function(req, res) {
   // req.body will pass the json object sent from ajax in public javascript
   // connecting to firebase database  
   const database = firebase.database();
-  console.log('this is a test' + req.body.dateArrived.length);
+  // console.log('this is a test ' + req.body.dateArrived.length);
+  
   // working as intended
   // referencing the country that was selected
   // child is referencing the state and pushing all the relative info to it
