@@ -1,0 +1,148 @@
+extends layout
+
+block content
+  div.modal#modal
+    div#removefadeOut.modal-dialog
+      div.modal-content
+        div.modal-header
+          strong#providenceTitle
+        div.modal-body
+          strong MOST RECENT ENTRIES
+          span#providenceBody
+        div.modal-footer
+          button#waiting.btn.btn-default(type="button" onclick="modal.close();") Exit
+
+
+  div.row.blackbackground
+    div.col-md-5
+      h1 Welcome #{title}
+      p Click on your state to see info on the latest deliveries or seizures.
+    div.col-md-7
+      // ADD USER
+      h2 Add your package to the list!
+      div#add
+        fieldset.baseline
+          div.row
+            div.col-md-4
+              label(for='seized') Was it seized?: <small class="redtext">req</small>
+            div.col-md-1
+              label(for='seized') NO
+            div.col-md-1
+              input(type='radio' name='seized' value='No' checked)
+            div.col-md-1
+              label(for='seized') YES
+            div.col-md-1
+              input(type='radio' name='seized' value='Yes')
+          div.row
+            div.col-md-4
+              label.width(for='courierService') Courier Service: <small class="redtext">req</small>
+            div.col-md-1
+              label(for='courierService') EMS
+            div.col-md-1
+              input(type='radio' name='courierService' value='EMS' checked)
+            div.col-md-1
+              label(for='courierService') DHL
+            div.col-md-1
+              input(type='radio' name='courierService' value='DHL')
+            div.col-md-3
+              label.padding15(for='courierService') OTHER
+              input(type='radio' name='courierService' value='OTHER')
+          div.row
+            div.col-md-4
+              label.width(for='country') Country: <small class="redtext">Only US ATM</small>
+            div.col-md-6
+              div#countryfile        
+          div.row
+            div.col-md-4
+              label.width(for='providence') State/Providence: <small class="redtext">req</small>
+            div.col-md-6
+              div#providencefile  
+          div.row
+            div.col-md-4
+              label.width(for='agent') Agent Used:
+            div.col-md-7 
+              select(name="agent" id='agent' class='blacktext')
+                <option value="" selected="selected">Select a Agent</option>
+                <option value="Superbuy">Superbuy</option>
+                <option value="CSS">CSS</option>
+                <option value="Basetao">Basetao</option>
+                <option value="Ytaopal">Ytaopal</option>
+                <option value="Direct">Directly Shipped</option>
+                <option value="Other">Other</option>
+          div.row
+            div.col-md-4
+              label.width(for='date') Delivery Date: <small class="redtext">req <br/>Only 2018 possible</small>
+            div.col-md-1
+              label(for='month') Month 
+            div.col-md-2
+              input.width#month(type='number', placeholder='03')
+            div.col-md-1
+              label(for='day') Day
+            div.col-md-2
+              input.width#day(type='number', placeholder='18')   
+            div.col-md-2
+              input.width#year(type='number', placeholder='2018' value="2018" disabled)    
+          div.row
+            div.col-md-4
+              label.width(for='packageSize') Package Size (kg):
+            div.col-md-3
+              input.width#packageSize(type='number', placeholder='5')
+          div.row
+            div.col-md-4
+              button.btn.btn-warning#btnAddPackage Add Package   
+
+        
+
+  div.margins
+    img(src="/images/usa2.png" usemap="#usamap" alt="usamap")
+    map.usa(name="usamap")
+      area.state#AL(shape="rec" coords="670, 375, 730, 465" alt="United States")
+      area.state#AK(shape="rec" coords="10, 435, 275, 590" alt="United States")
+      area.state#AZ(shape="poly" coords="185, 295, 280, 313, 261, 434, 218, 420, 155, 395, 185, 295" alt="United States")
+      area.state#AR(shape="rec" coords="545, 345, 615, 415" alt="United States")
+      area.state#CA(shape="poly" coords="35, 145, 110, 160, 90, 230, 170, 350, 160, 380, 100, 380, 30, 265, 35, 145" alt="United States")
+      area.state#CO(shape="rec" coords="295, 230, 405, 325" alt="United States")
+      area.state#CT(shape="poly" coords="907, 183, 935, 177, 938, 190, 911, 201, 907, 183" alt="United States")
+      area.state#DE(shape="rec" coords="887, 242, 950, 265" alt="United States")
+      area.state#FL(shape="rec" coords="690, 465, 845, 575" alt="United States")
+      area.state#GA(shape="poly" coords="720, 370, 762, 368, 816, 425, 805, 453, 740, 458, 720, 370" alt="United States")
+      area.state#HI(shape="rec" coords="310, 508, 430, 590" alt="United States")
+      area.state#ID(shape="poly" coords="211, 28, 270, 160, 260, 194, 168, 173, 211, 28" alt="United States")
+      area.state#IL(shape="poly" coords="620, 209, 665, 215, 663, 316, 624, 302, 620, 209" alt="United States")
+      area.state#IN(shape="rec" coords="670, 225, 720, 287" alt="United States")
+      area.state#IA(shape="rec" coords="518, 190, 608, 250" alt="United States")
+      area.state#KS(shape="rec" coords="415, 260, 540, 328" alt="United States")
+      area.state#KY(shape="poly" coords="660, 333, 760, 280, 750, 325, 660, 333" alt="United States")
+      area.state#LA(shape="rec" coords="558, 423, 621, 501" alt="United States")
+      area.state#ME(shape="rec" coords="940, 50, 990, 140" alt="United States")
+      area.state#MD(shape="rec" coords="845, 250, 890, 280" alt="United States")
+      area.state#MA(shape="rec" coords="907, 163, 963, 174" alt="United States")
+      area.state#MI(shape="rec" coords="660, 94, 755, 210" alt="United States")
+      area.state#MN(shape="rec" coords="512, 66, 589, 184" alt="United States")
+      area.state#MS(shape="rec" coords="628, 375, 667, 467" alt="United States")
+      area.state#MO(shape="poly" coords="541, 255, 597, 252, 642, 334, 548, 337, 541, 255" alt="United States")
+      area.state#MT(shape="rec" coords="235, 35, 380, 145" alt="United States")
+      area.state#NE(shape="rec" coords="392, 196, 526, 252" alt="United States")
+      area.state#NV(shape="poly" coords="110, 162, 210, 190, 170, 345, 92, 228, 110, 162" alt="United States")
+      area.state#NH(shape="poly" coords="926, 104, 944, 150, 921, 157, 926, 104" alt="United States")
+      area.state#NJ(shape="rec" coords="890, 205, 905, 240" alt="United States")
+      area.state#NM(shape="rec" coords="282, 315, 376, 431" alt="United States")
+      area.state#NY(shape="rec" coords="800, 125, 905, 190" alt="United States")
+      area.state#NC(shape="rec" coords="774, 331, 901, 365" alt="United States")
+      area.state#ND(shape="rec" coords="404, 62, 509, 126" alt="United States")
+      area.state#OH(shape="poly" coords="718, 222, 785, 207, 792, 250, 769, 283, 724, 275, 718, 222" alt="United States")
+      area.state#OK(shape="rec" coords="443, 330, 547, 404" alt="United States")
+      area.state#OR(shape="rec" coords="41, 67, 163, 154" alt="United States")
+      area.state#PA(shape="rec" coords="791, 207, 885, 238 " alt="United States")
+      area.state#RI(shape="rec" coords="939, 177, 959, 187" alt="United States")
+      area.state#SC(shape="poly" coords="766, 364, 853, 376, 815, 419, 766, 364" alt="United States")
+      area.state#SD(shape="rec" coords="394, 128, 511, 198" alt="United States")
+      area.state#TN(shape="poly" coords="641, 342, 787, 327, 733, 367,638, 369, 641, 342" alt="United States")
+      area.state#TX(shape="poly" coords="389, 338, 438, 341, 438, 391, 552, 411, 557, 573, 472, 573, 318, 434, 381, 437, 389, 338" alt="United States")
+      area.state#UT(shape="poly" coords="213, 190, 260, 199, 258, 220, 293, 226, 279, 309, 189, 292, 213, 190" alt="United States")
+      area.state#VT(shape="poly" coords="894, 119, 919, 110, 914, 160, 894, 119" alt="United States")
+      area.state#VA(shape="poly" coords="758, 328, 848, 260, 895, 305, 758, 328" alt="United States")
+      area.state#WA(shape="poly" coords="95, 3, 205, 24, 184, 84, 80, 52, 95, 3 " alt="United States")
+      area.state#WV(shape="poly" coords="791, 255, 836, 257, 782, 303, 771, 290, 791, 255" alt="United States")
+      area.state#WI(shape="poly" coords="587, 121, 659, 149, 658, 203, 611, 205, 587, 121" alt="United States")
+      area.state#WY(shape="rec" coords="282, 147, 378, 224" alt="United States")

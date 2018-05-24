@@ -1,0 +1,67 @@
+body {
+  position: relative;
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.modal .modal-dialog {
+  width: 500px;
+  color: black;
+}
+
+input {
+  color: black;
+}
+
+.margins {
+  margin: 30px;
+}
+
+.width {
+  width: 100%;
+  margin: 4px 0;
+}
+
+.redtext {
+  color: red;
+}
+
+body {
+  height: 1200px;
+  background-image: url('../images/wallpaper.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+.blackbackground {
+  background: rgba(0,0,0,0.5);
+  padding: 10px;
+}
+
+.modalbackground {
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+  width: 480px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.baseline {
+  vertical-align: baseline;
+}
+
+.padding15 {
+  padding-right: 15px;
+}
+
+.blacktext {
+  color: black;
+}
+
+.row {
+  padding: 3px 0;
+}
